@@ -19,28 +19,28 @@ export default function Card({ card }) {
 	}
 	useEffect(() => {
 		console.log(card);
-	}, [card])
+	}, [card]);
 	return (
-		<div className="card ring-1 ring-black w-52 h-80  rounded-lg p-4 bg-slate-100 hover:-translate-y-4">
+		<div className="card ring-1 ring-black w-32 h-52  rounded-lg p-4 bg-slate-100 hover:-translate-y-4">
 			<div className={`${color} rounded-lg h-full flex flex-col px-2`}>
-				<p className="text-black font-extrabold text-6xl relative w-fit">
+				<p className="text-black font-extrabold text-3xl relative w-fit">
 					{num}
-					<span className="text-white text-5xl font-bold absolute top-1 -right-1">
+					<span className="text-white text-2xl font-bold absolute top-1 -right-1">
 						{num}
 					</span>
 				</p>
-				<div className="self-center rounded-full p-10 ring-8 rotate-45 ring-white">
-					<p className="self-center -rotate-45 text-extrabold font-extrabold text-8xl relative ">
+				<div className="self-center rounded-full p-7 ring-8 rotate-45 ring-slate-100">
+					<p className="self-center -rotate-45 text-extrabold font-extrabold text-5xl relative ">
 						{num}
-						<span className="text-white text-8xl font-bold absolute top-1 -right-1">
+						<span className="text-white text-5xl font-bold absolute top-1 -right-1">
 							{num}
 						</span>
 					</p>
 				</div>
 
-				<p className="self-end rotate-180 text-black font-extrabold text-6xl relative w-fit">
+				<p className="self-end rotate-180 text-black font-extrabold text-3xl relative w-fit">
 					{num}
-					<span className="text-white text-5xl font-bold absolute top-1 -right-1">
+					<span className="text-white text-2xl font-bold absolute top-1 -right-1">
 						{num}
 					</span>
 				</p>
