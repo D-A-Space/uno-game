@@ -51,14 +51,14 @@ export function GameProvider({ children }) {
                 const randomIndex = Math.floor(Math.random() * theCards.length);
                 // const newArray = [...theCards];
                 const card = theCards.splice(randomIndex, 1);
-                arrayOne.push(card)
+                arrayOne.push(card[0])
                 // setAllCards(newArray)
             }
             for (let i = 0; i < 7; i++) {
                 const randomIndex = Math.floor(Math.random() * theCards.length);
                 // const newArray = [...allCards];
                 const card = theCards.splice(randomIndex, 1);
-                arrayTwo.push(card)
+                arrayTwo.push(card[0])
                 // setAllCards(newArray)
             }
             setPlayerOneCards(arrayOne);
@@ -94,7 +94,7 @@ export function GameProvider({ children }) {
     const data = ""
     return (
         <>
-            <GameContext.Provider value={{ data }} >
+            <GameContext.Provider value={{ playerOneCards, playerTwoCards, ready }} >
                 {children}
             </GameContext.Provider>
         </>
