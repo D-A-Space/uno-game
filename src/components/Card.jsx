@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function Card({ card }) {
 	const num = card[1];
@@ -17,8 +17,11 @@ export default function Card({ card }) {
 			color = "bg-yellow-300";
 			break;
 	}
+	useEffect(() => {
+		console.log(card);
+	}, [card])
 	return (
-		<div className="card ring-1 ring-black w-52 h-80 rounded-lg p-4 bg-slate-100 hover:-translate-y-4">
+		<div className="card ring-1 ring-black w-52 h-80  rounded-lg p-4 bg-slate-100 hover:-translate-y-4">
 			<div className={`${color} rounded-lg h-full flex flex-col px-2`}>
 				<p className="text-black font-extrabold text-6xl relative w-fit">
 					{num}

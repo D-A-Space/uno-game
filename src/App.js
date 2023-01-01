@@ -1,5 +1,11 @@
+import PlayingTable from "./pages/PlayingTable";
+
 function App() {
-  return <p>sadas</p>;
+  return (
+    <>
+      <PlayingTable />
+    </>
+  );
 }
 
 export default App;
