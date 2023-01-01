@@ -1,3 +1,4 @@
+
 import React, { useContext } from "react";
 import Card from "../components/Card";
 import FlippedCard from "../components/FlippedCard";
@@ -15,7 +16,10 @@ export default function PlayingTable() {
 				</div>
 				<div className=" h-fit flex justify-between px-10 w-full ">
 					<FlippedCard />
-					<Card card={"b8"} />
+					   {
+                        ready &&
+                        <Card card={ground[0]} />
+                    }
 					<div></div>
 				</div>
 				<div className="flex ">
@@ -27,4 +31,5 @@ export default function PlayingTable() {
 			</div>
 		</>
 	);
+
 }
