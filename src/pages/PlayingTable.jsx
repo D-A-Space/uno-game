@@ -1,8 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import Card from '../components/Card'
 import { GameContext } from '../context/GameContext'
 export default function PlayingTable() {
-    const { playerOneCards, playerTwoCards, ready } = useContext(GameContext)
+    const { playerOneCards, playerTwoCards, ready, ground } = useContext(GameContext)
+    useEffect(() => {
+        console.log('ground');
+        console.log(ground);
+    }, [ground])
     return (
         <>
             <div className='h-screen items-center flex flex-col   '>
@@ -17,7 +21,10 @@ export default function PlayingTable() {
 
                 </div>
                 <div className='scale-50 h-fit '>
-                    <Card card={'b8'} />
+                    {
+                        ready &&
+                        <Card card={ground[0]} />
+                    }
                 </div>
                 <div className='flex scale-50'>
                     {

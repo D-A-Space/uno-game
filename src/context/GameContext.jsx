@@ -6,7 +6,7 @@ export function GameProvider({ children }) {
     const [allCards, setAllCards] = useState([])
     const [playerOneCards, setPlayerOneCards] = useState()
     const [playerTwoCards, setPlayerTwoCards] = useState()
-    const [ground, setGround] = useState()
+    const [ground, setGround] = useState([])
     // a function to shuffle an array 
     const shuffle = (array) => {
         for (let i = array.length - 1; i > 0; i--) {
@@ -63,11 +63,17 @@ export function GameProvider({ children }) {
             }
             setPlayerOneCards(arrayOne);
             setPlayerTwoCards(arrayTwo);
+
+
+            const randomIndex = Math.floor(Math.random() * theCards.length);
+            const card = theCards.splice(randomIndex, 1);
+            // console.log('card');
+            // console.log(card[0]);
+            setGround([...ground, card[0]])
             setAllCards(shuffle(theCards));
 
-
+            setReady(true)
         }
-        setReady(true)
 
     }
 
@@ -94,7 +100,7 @@ export function GameProvider({ children }) {
     const data = ""
     return (
         <>
-            <GameContext.Provider value={{ playerOneCards, playerTwoCards, ready }} >
+            <GameContext.Provider value={{ playerOneCards, playerTwoCards, ready, ground }} >
                 {children}
             </GameContext.Provider>
         </>
