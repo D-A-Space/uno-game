@@ -1,6 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { GameContext } from "../context/GameContext";
 
-export default function Card({ card }) {
+export default function Card({ card, player, ground }) {
+	const { playCard } = useContext(GameContext);
 	const num = card[1];
 	let color;
 	switch (card[0]) {
@@ -21,7 +23,7 @@ export default function Card({ card }) {
 		console.log(card);
 	}, [card]);
 	return (
-		<div className="card ring-1 ring-black w-32 h-52  rounded-lg p-4 bg-slate-100 hover:-translate-y-4">
+		<div onClick={() => !ground && playCard(card, player)} className={`card ring-1 ring-black w-32 h-52   rounded-lg p-4 bg-slate-100 ${!ground && "hover:-translate-y-4 cursor-pointer"} `}>
 			<div className={`${color} rounded-lg h-full flex flex-col px-2`}>
 				<p className="text-black font-extrabold text-3xl relative w-fit">
 					{num}

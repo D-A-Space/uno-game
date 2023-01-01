@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { GameContext } from "../context/GameContext";
 
 export default function FlippedCard() {
+	const { drawCard } = useContext(GameContext);
 	return (
-		<div className="card ring-1 ring-black w-32 h-52  rounded-lg p-4 bg-slate-100 hover:-translate-y-4">
+		<div onClick={drawCard} className="card ring-1 ring-black w-32 h-52  rounded-lg p-4 bg-slate-100 cursor-pointer ">
 			<div
 				className={`bg-black overflow-hidden rounded-lg h-full flex flex-col px-2 justify-center`}
 			>
